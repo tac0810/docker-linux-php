@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  web:
+    build: ./php
+    platform: linux/amd64
+    volumes:
+      - ./public:/var/www/html
+    ports:
+      - "8080:80"
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "8025:8025"
+      - "1025:1025"
